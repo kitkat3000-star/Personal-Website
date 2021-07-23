@@ -41,7 +41,7 @@ const useStyles = makeStyles({
       maxWidth: 280,
       position: "absolute",
       top:190,
-      left: 250,
+      left: 1100,
       boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)"
     },
     root1: {
@@ -102,30 +102,8 @@ const DocumentsComponent = () => {
                         </Button>
                     </CardActions>
             </Card>
-            <Card className={classes.root1}>
-                    <CardActionArea>
-                        <CardMedia
-                        className={classes.media}
-                        image="https://nz.hudson.com/wp-content/cache/bb-plugin/cache/resume-examples-1024x731-landscape.png"
-                        title="My resume"
-                        />
-                        <CardContent>
-                        <Typography className={classes.heading} gutterBottom variant="h5" component="h2" align="center" fontStyle='italic'>
-                         Document
-                        </Typography>
-                        <Typography className={classes.para} variant="body2" color="textSecondary" component="p" align="center">
-                            Nothing here yet! ..............................
-                        </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button size="small" variant="contained" color="primary" className={classes.button}>
-                            View
-                        </Button>
-                    </CardActions>
-            </Card>
             <div>
-                <img src="https://i.pinimg.com/originals/0e/47/72/0e47720e157806d45d45c736fb2fa920.gif" width="100%" height="800px"/>
+                <img src="https://i.pinimg.com/originals/0e/47/72/0e47720e157806d45d45c736fb2fa920.gif" position="absolute" width="55.5%" height="720px"/>
             </div>
         </div>
     )
