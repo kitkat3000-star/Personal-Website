@@ -9,7 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Resume from "../assets/Himaja Kakade CV1.pdf";
+import Resume from "../assets/Himaja Kakade CV2.pdf";
 
 
 const Document = styled.div`

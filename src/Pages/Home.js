@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import me from '../assets/me.png';
 
 
 const Intro = styled.div`
@@ -49,12 +48,6 @@ const ImageContainer = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-
-    img{
-        margin-top:-50px;
-        margin-left:60px;
-        height: 100%;
-    }
 `;
 
 const Wrapper = styled.div`
@@ -139,7 +132,6 @@ const HomeComponent = () => {
            </Left>
            <Right>
                 <ImageContainer>
-                    {/* <img src={me}alt=""/>  */}
                 </ImageContainer>
             
                 <Social>

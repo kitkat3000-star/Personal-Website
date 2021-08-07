@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import MotionHoc from "./MotionHoc";
-import ReactPlayer from "react-player";
-import smartpark from '../assets/Media1.mov';
-import website from '../assets/Website.mp4';
-import portfolio from '../assets/portfolio.mp4';
+import { useState } from "react";
+import { useEffect } from "react";
+import ProjectList from "./ProjectList";
+import { featuredPortfolio, webPortfolio, mobilePortfolio, designPortfolio } from "../extras/data";
+
 
 const Project = styled.div`
     width:100vw;
@@ -29,145 +30,135 @@ const Project = styled.div`
         color: #24305E;
         font-size: 13px;
     }
+
+    ul{
+        margin-top: 160px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        margin-left: 13em;  
+
+    }
+
+    span{
+        position: absolute;
+        bottom:0;
+        left:54.3em;
+        color: #24305E;
+        font-size: 13px;
+    }
 `;
 
 const Container = styled.div`
-    width: 100%;
-    height: 80%;
+    width: 60%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     position: absolute;
-    top: 8em;
-    left: 5em;
+    top: 13.5em;
+    left: 22.75em;
+    background-color: white;
+    border-radius: 20px;
 `;
 
-const Card = styled.div`
-    background-color:#dbf3fa;
-    width: 300px;
-    height: 80%;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px -8px black;
+const Item = styled.div`
+    width: 220px;
+    height:150px;
+    border-radius: 20px;
+    border: 1px solid lightgrey;
+    margin: 10px 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 20px;
-    transition: all 1s ease;
-   
-    &.featured{
-        width: 300px;
-        height: 85%;
-        margin: 0 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.5s ease;
+    cursor: pointer;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        border-radius: 20px;
     }
+
     &:hover{
-        transform: scale(1.1);
+        background-color: #24305E;
+        img{
+            opacity: 0.2;
+            z-index: 0; 
+        }
     }
 
-`;
-
-const Top = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    // img {
-    //     cursor: pointer;
-    //     height: 140px;
-    //     width: 600px;
-    //     border-radius: 5%;
-    //     object-fit: cover;
-    //     margin: 0 30px;
-    // }
-}
-`;
-
-const Center = styled.div`
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(250, 244, 245);
-
-    p{
-        font-family: 'Nanum Pen Script', cursive;
-        font-size: 22px;
-        text-align: center;
-    }
-`;
-
-const Bottom = styled.div`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    font-family: 'Nanum Pen Script', cursive;
-
-    h3 {
-        margin-bottom: 5px;
-        font-size: 25px;
-        color: #FE7F9C;
-    }
-
-    h4{
-        font-size: 23px;
-        color: rgb(121, 115, 115);
+    h3{
+        position: absolute;
+        font-size: 15px;
     }
 `;
 
 
 const ProjectsComponent = () => {
-    
-    const data = [
+    const [selected, setSelected] =  useState("featured");
+    const [data, setData] = useState([]);
+    const list = [
         {
-          id: 1,
-          name: "Smart Park",
-          title: "Final Year Project",
-          video: smartpark,
-          desc:
-            "SmartPark is a parking management system for establishing efficiency within parking lots. This consists of an OCR system, a mobile app and BLE beacons",
+            id: "featured",
+            title: "Featured",
+          },
+          {
+            id: "mobile",
+            title: "Mobile App",
+          },
+          {
+            id: "web",
+            title: "Web App",
         },
         {
-          id: 2,
-          name: <a href="https://uxfol.io/himaja.kakade">UI/UX Portfolio</a>,
-          title: "Adobe XD screens",
-          video: portfolio,
-          desc:
-            "Check out my UI screens for various projects I made at University. Portfolio created with Figma & uxifolio. LINK BELOW!",
-          featured: true,
+            id: "design",
+            title: "Designing",
         },
-        {
-          id: 3,
-          name: "Websites",
-          title: "Design & Development",
-          video: website,
-          desc:
-            "Here is a demo video for the websites I created using html, css, xml, js, react, etc.",
-        },
-      ];
+    ]
+
+    useEffect(() => {
+        switch(selected){
+            case "featured": 
+                setData(featuredPortfolio);
+                break;
+            case "web": 
+                setData(webPortfolio);
+                break;
+            case "mobile": 
+                setData(mobilePortfolio);
+                break;
+            case "design": 
+                setData(designPortfolio);
+                break;
+            default:
+                setData(featuredPortfolio);
+        }
+    }, [selected])
 
     return (
         <Project>
             <h1>My Projects</h1>
+            <ul>
+                {list.map((item) =>(
+                    <ProjectList 
+                    title={item.title} 
+                    active={selected === item.id} 
+                    setSelected={setSelected}
+                    id= {item.id} />
+                ))}
+            </ul>
             <Container>
-            {data.map((d) => (
-                <Card className={d.featured ? "card featured":"card"}>
-                    <Top>
-                        {/* <img src={d.img} /> */}
-                        <ReactPlayer width='600px'
-                            height='140px'
-                            margin= '0 30px'
-                            object-fit='cover'
-                            controls
-                            url={d.video}
-                            />
-                    </Top>
-                    <Center>
-                        <p>{d.desc}</p>
-                    </Center>
-                    <Bottom>
-                        <h3>{d.name}</h3>
-                        <h4>{d.title}</h4>
-                    </Bottom>
-                </Card>
-            ))}
+                {data.map((d) => (
+                <Item>
+                    <img src={d.img} alt="" />
+                    <h3>{d.title}</h3>
+                </Item>
+                ))}
             </Container>
             <span>©2021 Himaja Kakade. All Rights Reserved.</span>
         </Project>
