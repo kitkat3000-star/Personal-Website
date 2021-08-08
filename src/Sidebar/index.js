@@ -217,23 +217,23 @@ const Sidebar = () => {
                 
                 <Slickbar clicked={click}>
             
-                    <Item onClick={() => setClick(false)} exact activeClassName="active" to="/">
+                    <Item onClick={() => setClick(false)} exact activeClassName="active" to="/Personal_Website">
                         <img src={Home} alt="Home"  />
                         <Text clicked={click}>Home</Text>
                     </Item>
-                    <Item onClick={() => setClick(false)} activeClassName="active" to="/skills">
+                    <Item onClick={() => setClick(false)} activeClassName="active" to="/Personal_Website/skills">
                         <img src={Skills} alt="Skills" />
                         <Text clicked={click}>Skills</Text>
                     </Item>
-                    <Item onClick={() => setClick(false)} activeClassName="active" to="/projects">
+                    <Item onClick={() => setClick(false)} activeClassName="active" to="/Personal_Website/projects">
                         <img src={Projects} alt="Projects"  />
                         <Text clicked={click}>Projects</Text>
                     </Item>
-                    <Item onClick={() => setClick(false)} activeClassName="active" to="/documents">
+                    <Item onClick={() => setClick(false)} activeClassName="active" to="/Personal_Website/documents">
                         <img src={Documents} alt="Documents"  />
                         <Text clicked={click}>Documents</Text>
                     </Item>
-                    <Item onClick={() => setClick(false)} activeClassName="active" to="/interests">
+                    <Item onClick={() => setClick(false)} activeClassName="active" to="/Personal_Website/interests">
                         <img src="http://simpleicon.com/wp-content/uploads/heart1.png" style={{ width: "22px", height: "22px" }} alt="Interests"/>
                         <Text clicked={click}>Interests</Text>
                     </Item>
