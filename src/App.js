@@ -33,10 +33,10 @@ function App() {
         <AnimatePresence exitBeforeEnter>
           <Switch>
             <Route exact path="/Personal_Website" component={Home} />
-            <Route path="/skills" component={Skills} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/documents" component={Documents} />
-            <Route path="/interests" component={Interests} />
+            <Route path="/Personal_Website/skills" component={Skills} />
+            <Route path="/Personal_Website/projects" component={Projects} />
+            <Route path="/Personal_Website/documents" component={Documents} />
+            <Route path="/Personal_Website/interests" component={Interests} />
           </Switch>
         </AnimatePresence>
     </>
