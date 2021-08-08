@@ -84,7 +84,7 @@ const DocumentsComponent = () => {
                     <CardActionArea>
                         <CardMedia
                         className={classes.media}
-                        image="https://nz.hudson.com/wp-content/cache/bb-plugin/cache/resume-examples-1024x731-landscape.png"
+                        image="https://www.cv99.in/wp-content/uploads/2018/07/one-pager-resume-template.png"
                         title="My resume"
                         />
                         <CardContent>
