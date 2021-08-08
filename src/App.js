@@ -32,7 +32,7 @@ function App() {
       <Sidebar />
         <AnimatePresence exitBeforeEnter>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/Personal_Website" component={Home} />
             <Route path="/skills" component={Skills} />
             <Route path="/projects" component={Projects} />
             <Route path="/documents" component={Documents} />
