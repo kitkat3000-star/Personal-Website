@@ -28,6 +28,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -52,7 +54,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kitkat3000-star/Personal-Website.git"
@@ -62,5 +66,5 @@
   "bugs": {
     "url": "https://github.com/codebucks27/react-sidebar/issues"
   },
-  "homepage":""
+  "homepage": "https://kitkat3000-star.github.io/Personal_Website/"
 }
