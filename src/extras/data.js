@@ -3,7 +3,6 @@ import website from "../assets/website.png";
 import app from "../assets/app.png";
 import travelous from "../assets/travelous.png";
 import basic from "../assets/basic.png";
-import poster from "../assets/poster.png";
 import extra from "../assets/extra.png";
 import blog from "../assets/blog.png";
 
@@ -25,7 +24,7 @@ export const featuredPortfolio = [
     },
     {
       id: 2,
-      title: <Link href="https://www.linkedin.com/posts/himaja-k-617897188_thesparksfoundation-gripjuly21-webdevelopment-ugcPost-6819196940375474176-e8ib">Basic Banking System</Link>,
+      title: <Link href="https://drive.google.com/file/d/1A_oG9-FMqaH7AN5RdVpQn94y6incWvSD/view?usp=sharing">Basic Banking System</Link>,
       img: basic,
       
     },
@@ -48,8 +47,8 @@ export const featuredPortfolio = [
     },
     {
       id: 6,
-      title: <Link href={poster}>Ethics Poster</Link>,
-      img: poster,
+      title: <Link href="https://drive.google.com/file/d/1vcA1ULQx74lEiBu8o2YftnhR9U_ZXP7R/view?usp=sharing">More Portfolio designs</Link>,
+      img: extra,
     },
   ];
   
@@ -67,7 +66,7 @@ export const featuredPortfolio = [
     },
     {
       id: 3,
-      title: <Link href="">Blog Website</Link>,
+      title: <Link href="https://drive.google.com/file/d/1CLM92RxkjtjUfHfEkaFHyIWrzAPElcTR/view?usp=sharing">Blog Website</Link>,
       img: blog,
     },
 
@@ -95,11 +94,11 @@ export const featuredPortfolio = [
   ];
   
   export const designPortfolio = [
-    {
-      id: 1,
-      title: <Link href={poster}>Ethics Poster</Link>,
-      img: poster,
-    },
+    // {
+    //   id: 1,
+    //   title: "Work in Progress",
+      
+    // },
    
   ];
   
