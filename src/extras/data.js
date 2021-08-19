@@ -30,7 +30,7 @@ export const featuredPortfolio = [
     },
     {
       id: 3,
-      title: <Link href="">Blog Website</Link>,
+      title: <Link href="https://drive.google.com/file/d/1CLM92RxkjtjUfHfEkaFHyIWrzAPElcTR/view?usp=sharing">Blog Website</Link>,
       img: blog,
      
     },
